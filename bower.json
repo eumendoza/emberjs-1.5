@@ -1,0 +1,19 @@
+{
+  "name": "ember-112",
+  "homepage": "https://github.com/eumendoza/emberjs-112",
+  "authors": [
+    "Eugenio Mendoza <eu.mendoza@gmail.com>"
+  ],
+  "description": "playing with ember 1.12",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "ember",
+    "javascript"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "ember": "1.12.0"
+  }
+}
