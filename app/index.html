@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ember Started Kit</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	</head>
+	<body>
+		<script type="text/x-handlebars">
+			<h2>Welcome niggi</h2>
+			{{ outlet }}
+		</script>
+
+		<script type="text/x-handlebars" id="index">
+			<ul>
+				{{#each item in model}}
+					<li>{{item}}</li>
+				{{/each}}
+			</ul>
+			{{#link-to 'first-route'}} Vamos al otro lado {{/link-to}}
+		</script>
+
+		<script type="text/x-handlebars" id="first-route">
+			<p {{action 'paraClicked'}}>Hola calamar</p>
+			Temazo {{model.firstThing}} y sigo con {{model.secondThing}}
+			{{#link-to 'index'}} Volvemos!!! {{/link-to}}
+		</script>
+
+		<script src="../bower_components/jquery/jquery.js"></script>
+		<script src="../bower_components/handlebars/handlebars.js"></script>
+		<script src="../bower_components/ember/ember.js"></script>
+		<script src="scripts/app.js"></script>
+	</body>
+
+</html>
