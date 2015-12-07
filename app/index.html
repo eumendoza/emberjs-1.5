@@ -9,21 +9,12 @@
 	<body>
 		<script type="text/x-handlebars">
 			<h2>Welcome niggi</h2>
-			<p>
-				{{#link-to 'index'}} Home{{/link-to}}
-				{{#link-to 'about'}} Me{{/link-to}}
-			</p>
+			
 			{{outlet}}
 		</script>
 
 		<script type="text/x-handlebars" id="index">
 			<p>Ohhh si la web</p>
-			<button {{action 'callAboutController'}}> Call Me popup</button>
-		</script>
-
-		<script type="text/x-handlebars" id="about">
-			<p>Y tiene esta otra vista!!!</p>
-			<button {{action 'callIndexController'}}> Call Home popup</button>
 		</script>
 
 		<script src="../bower_components/jquery/jquery.js"></script>
