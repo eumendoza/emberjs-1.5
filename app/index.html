@@ -9,7 +9,8 @@
 	<body>
 		<script type="text/x-handlebars">
 			<h2>Welcome niggi</h2>
-			{{ outlet }}
+			<p>{{#link-to 'blog'}}Blog{{/link-to}}</p>
+			{{outlet}}
 		</script>
 
 		<script type="text/x-handlebars" id="index">
@@ -18,18 +19,36 @@
 					<li>{{item}}</li>
 				{{/each}}
 			</ul>
-			{{#link-to 'first-route'}} Vamos al otro lado {{/link-to}}
+			</br>
+			<p>{{firstName}} {{input value=firstName}}</p>
+			<p>{{lastName}} {{input value=lastName}}</p>
+			<p>{{fullName}} </p>
 		</script>
 
-		<script type="text/x-handlebars" id="first-route">
-			<p {{action 'paraClicked'}}>Hola calamar</p>
-			Temazo {{model.firstThing}} y sigo con {{model.secondThing}}
-			{{#link-to 'index'}} Volvemos!!! {{/link-to}}
+		<script type="text/x-handlebars" id="blog">
+			<h2>Mi blog</h2>
+			<ul>
+				{{#each item in model}}
+					<li>
+						<h3>{{#link-to 'article' item.id}}{{item.title}}{{/link-to}}</h3>
+					</li>
+				{{/each}}
+			</ul>
+		</script>
+
+		<script type="text/x-handlebars" id="article">
+			<h3>{{title}}</h3>
+			<p>{{body}}</p>
+			<h4>Comments</h4>
+			{{#each comments}}
+				{{text}}
+			{{/each}}
 		</script>
 
 		<script src="../bower_components/jquery/jquery.js"></script>
 		<script src="../bower_components/handlebars/handlebars.js"></script>
 		<script src="../bower_components/ember/ember.js"></script>
+		<script src="../bower_components/ember-data/ember-data.js"></script>
 		<script src="scripts/app.js"></script>
 	</body>
 
