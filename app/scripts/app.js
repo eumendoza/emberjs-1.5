@@ -7,14 +7,10 @@ App.Router.map(function() {
 });
 
 App.IndexRoute = Ember.Route.extend({
-
-});
-
-App.IndexController = Ember.ArrayController.extend({
-	firstName: '',
-	actions:{
-		handleSubmit: function(){
-			console.log(this.get('firstName'));
-		}
+	model: function(){
+		return ['Rojo', 'Amarillo', 'Verde'];
+	},
+	setupController: function(controller, model){
+		controller.set('model', model);
 	}
 });
